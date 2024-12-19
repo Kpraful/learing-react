@@ -1,0 +1,10 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;   
+    background-color: #333;         /* Optional: Add a background for visibility */
+    color: white;                   /* Optional: Set text color */
+    padding: 10px 0; 
+}
