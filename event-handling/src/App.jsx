@@ -5,9 +5,8 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0);
-  const [Name, setName] = useState("");
-  const [Address, setAddress] = useState("");
-  const [Form, setForm] = useState({"":"","Address":""});
+
+  const [Form, setForm] = useState({"Name":"","Address":""});
   function handleClick (){
     alert("I am clicked");
   }
