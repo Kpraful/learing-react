@@ -11,7 +11,6 @@ function App() {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts");
         const jsonData = await response.json();
         setData(jsonData);
-        console.log(data)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
