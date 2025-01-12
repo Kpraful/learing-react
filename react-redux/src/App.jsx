@@ -1,20 +1,22 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';  // Import Redux hooks
+import { increment } from './redux/Counter/counterSlice';  // Import increment action
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
-import { useCallback } from 'react'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();  // Initialize dispatch to dispatch actions
+  const count = useSelector((state) => state.counter.value);  // Get counter value from Redux store
 
-  const result = useCallback(() => {
-    return ("another")
-  }, []);
+
+
   return (
     <>
+      <Navbar/>
       <div>
-        <Navbar getValue={result} />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -24,7 +26,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => dispatch(increment())}>
           count is {count}
         </button>
         <p>
